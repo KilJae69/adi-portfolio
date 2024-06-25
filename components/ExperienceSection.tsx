@@ -12,13 +12,18 @@ import { useSectionInView } from "@/lib/hooks";
 import { useThemeContext } from "@/context/themeContext";
 import { MotionSpan } from "./framer";
 
+
 export default function ExperienceSection() {
-  const { ref } = useSectionInView("Experience");
+  const { ref, inView } = useSectionInView("Experience", 0.1);
   const { theme } = useThemeContext();
-  const [activeTab, setActiveTab] = useState("past");
+  const [activeTab, setActiveTab] = useState("current");
 
   return (
-    <section ref={ref} id="experience" className="scroll-mt-28 mb-28 sm:mb-40">
+    <section
+      ref={ref}
+      id="experience"
+      className="relative scroll-mt-28 mb-28 sm:mb-40"
+    >
       <SectionHeading>My experience</SectionHeading>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:max-w-[50%] w-full mx-auto justify-between mb-8 relative">
@@ -56,61 +61,58 @@ export default function ExperienceSection() {
 
       <div>
         {activeTab === "past" ? (
-          <div
-            className={`${
-              activeTab === "past" ? "opacity-1" : "opacity-0"
-            } transition-all duration-300 ease-in-out`}
-          >
+          <div>
             <VerticalTimeline animate lineColor="">
-              {experiencesData.map((item, index) => (
-                <React.Fragment key={index}>
-                  <VerticalTimelineElement
-                    visible={true}
-                    contentStyle={{
-                      background:
-                        theme === "light"
-                          ? "#f3f4f6"
-                          : "rgba(255,255,255, 0.05)",
-                      boxShadow: "none",
-                      border: "1px solid rgba(0,0,0, 0.5)",
-                      textAlign: "left",
-                      padding: "1.3rem 2rem",
-                    }}
-                    contentArrowStyle={{
-                      borderRight:
-                        theme === "light"
-                          ? ".4rem solid  #9ca3af"
-                          : ".4rem solid rgba(255,255,255, 0.5)",
-                    }}
-                    date={item.date}
-                    icon={item.icon}
-                    iconStyle={{
-                      background:
-                        theme === "light" ? "white" : "rgba(255,255,255,0.15)",
-                      fontSize: "1.5rem",
-                    }}
-                  >
-                    <h3 className="capitalize font-semibold">{item.title}</h3>
-                    <p className="font-normal !mt-0">{item.location}</p>
-                    <p className="!mt-1 !font-normal !text-gray-700 !dark:text-white/75">
-                      {item.description}
-                    </p>
-                  </VerticalTimelineElement>
-                </React.Fragment>
-              ))}
+              {experiencesData.map((item, index) => {
+               
+                return (
+                  <React.Fragment key={index}>
+                    <VerticalTimelineElement
+                      visible={inView}
+                      contentStyle={{
+                        background:
+                          theme === "light"
+                            ? "#f3f4f6"
+                            : "rgba(255,255,255, 0.05)",
+                        boxShadow: "none",
+                        border: "1px solid rgba(0,0,0, 0.5)",
+                        textAlign: "left",
+                        padding: "1.3rem 2rem",
+                      }}
+                      contentArrowStyle={{
+                        borderRight:
+                          theme === "light"
+                            ? ".4rem solid  #9ca3af"
+                            : ".4rem solid rgba(255,255,255, 0.5)",
+                      }}
+                      date={item.date}
+                      icon={item.icon}
+                      iconStyle={{
+                        background:
+                          theme === "light"
+                            ? "white"
+                            : "rgba(255,255,255,0.15)",
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      <h3 className="capitalize font-semibold">{item.title}</h3>
+                      <p className="font-normal !mt-0">{item.location}</p>
+                      <p className="!mt-1 !font-normal !text-gray-700 !dark:text-white/75">
+                        {item.description}
+                      </p>
+                    </VerticalTimelineElement>
+                  </React.Fragment>
+                );
+              })}
             </VerticalTimeline>
           </div>
         ) : (
-          <div
-            className={`${
-              activeTab === "current" ? "opacity-1" : "opacity-0"
-            } transition-all duration-300 ease-in-out`}
-          >
+          <div>
             <VerticalTimeline animate lineColor="">
               {devExperiencesData.map((item, index) => (
                 <React.Fragment key={index}>
                   <VerticalTimelineElement
-                    visible={true}
+                    visible={inView}
                     contentStyle={{
                       background:
                         theme === "light"

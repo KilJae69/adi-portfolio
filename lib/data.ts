@@ -167,6 +167,8 @@ export const projectsData = [
       "Simple static website for a local handcraft bussiness. ",
     tags: ["HTML", "CSS/Sass", "JavaSript",],
     imageUrl: dotsArtImg,
+    repoUrl: "https://github.com/KilJae69/dotsArt",
+    status: "Completed",
   },
   {
     title: "BookMeApp",
@@ -174,6 +176,8 @@ export const projectsData = [
       "A simple CRUD SPA application for saving and categorizing bookmarks for favourite resources for learning web development.",
     tags: ["React", "Tailwind", "Zustand", "React Query", "Supabase"],
     imageUrl: bookMeAppImg,
+    repoUrl: "https://github.com/KilJae69/BookMeApp",
+    status: "Completed",
   },
   {
     title: "Hidden Gem",
@@ -181,27 +185,35 @@ export const projectsData = [
       "Small booking website for a fictional resort in wilderness.",
     tags: [ "Next.js", "Supabase", "Tailwind"],
     imageUrl: hiddenGemImg,
+    repoUrl:"https://github.com/KilJae69/the-hidden-gem-website",
+    status: "Needs improvements",
   },
   {
     title: "Under Shop",
     description:
       "Practice project for a fictional e-commerce website, built with Next.js and Wix SDK.",
-    tags: [ "Next.js", "Wix SDK", "Tailwind"],
+    tags: [ "Next.js", "Wix SDK", "Tailwind","TypeScript"],
     imageUrl: undershopImg,
+    repoUrl:"https://github.com/KilJae69/under-armour-shop",
+    status: "Needs improvements",
   },
   {
     title: "Dev Overflow",
     description:
       "Full-stack project for a fictional developer community website. The app uses OpenAI's GPT-3-5 for generating answers to questions. ",
-    tags: [ "Next.js", "Mongo DB", "Mongoose", "OpenAI", "Tailwind", "Shadcn UI"],
+    tags: [ "Next.js", "Mongo DB", "TypeScript", "OpenAI", "Tailwind"],
     imageUrl: devOverflowImg,
+    repoUrl: "https://github.com/KilJae69/stack_overflow_next_js_14",
+    status: "Needs improvements",
   },
   {
     title: "Corp Blog Website",
     description:
       "NextJS corporate blog website focusing on clean design and high performance.",
-    tags: [ "Next.js", "Tailwind", "Shadcn UI"],
+    tags: [ "Next.js", "Tailwind","TypeScript", "Shadcn UI"],
     imageUrl: corpBlogImg,
+    repoUrl: "https://github.com/KilJae69/teric",
+    status: "Completed",
   },
 ] as const;
 

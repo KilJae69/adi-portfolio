@@ -7,28 +7,15 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration";
-import { useEffect, useState } from "react";
 
-dayjs.extend(duration);
+
 
 export default function IntroSection() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const [experience, setExperience] = useState("");
 
-  useEffect(() => {
-    const startDate = dayjs("2023-08-22"); // Replace with your actual start date
-    const now = dayjs();
-    const diff = dayjs.duration(now.diff(startDate));
 
-    const years = diff.years();
-    const months = diff.months();
-    const days = diff.days();
-
-    setExperience(`${years} years, ${months} months, and ${days} days`);
-  }, []);
+ 
 
   return (
     <section
@@ -75,9 +62,7 @@ export default function IntroSection() {
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
       >
         <span className="font-bold">Hello, I'm Adi.</span> I'm an aspiring{" "}
-        <span className="font-bold">front-end developer</span> with{" "}
-        <span className="font-bold">{experience}</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My main focus is{" "}
+          <span className="font-bold">front-end developer</span> dedicating every day to get better than I was yesterday.  My main focus is{" "}
         <span className="underline">React (Next.js)</span>.
       </MotionH1>
 

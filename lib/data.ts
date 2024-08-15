@@ -206,15 +206,15 @@ export const projectsData = [
     repoUrl: "https://github.com/KilJae69/stack_overflow_next_js_14",
     status: "Needs improvements",
   },
-  {
-    title: "Corp Blog Website",
-    description:
-      "NextJS corporate blog website focusing on clean design and high performance.",
-    tags: [ "Next.js", "Tailwind","TypeScript", "Shadcn UI"],
-    imageUrl: corpBlogImg,
-    repoUrl: "https://github.com/KilJae69/teric",
-    status: "Completed",
-  },
+  // {
+  //   title: "Corp Blog Website",
+  //   description:
+  //     "NextJS corporate blog website focusing on clean design and high performance.",
+  //   tags: [ "Next.js", "Tailwind","TypeScript", "Shadcn UI"],
+  //   imageUrl: corpBlogImg,
+  //   repoUrl: "https://github.com/KilJae69/teric",
+  //   status: "Completed",
+  // },
 ] as const;
 
 export const skillsData = [
